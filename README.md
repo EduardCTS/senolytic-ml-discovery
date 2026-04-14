@@ -1,11 +1,6 @@
 # senolytic-ml-discovery
-Initial data pipeline for BCL-xL (CHEMBL43) virtual screening. 
+Initial data pipeline for BCL-xL (CHEMBL43) virtual screening. The main goal here is to penalize physicochemical profiles linked to platelet toxicity before any of this hits a wet lab. 
 
-The goal here is to penalize physicochemical profiles linked to platelet toxicity before hitting the wet lab.
+For this current build I basically wrote a script that pulls the raw bioactivity data directly via the ChEMBL API. It then generates the Morgan Fingerprints (R=2, 2048 bits) to serve as our GNN baseline, while also calculating the basic ADME constraints like MolWt, LogP, and TPSA via RDKit so we can filter out toxic biodistributions right out of the gate.
 
-**Current build:**
-Pulls raw bioactivity data via ChEMBL API
-Generates Morgan Fingerprints (R=2, 2048 bits) for the GNN baseline
-Calculates basic ADME constraints (MolWt, LogP, TPSA) via RDKit to filter out toxic biodistributions early on
-
-*WIP - Just laying the groundwork while the project scope is finalized.*
+WIP. Just laying the groundwork in code while the actual project scope gets finalized.
